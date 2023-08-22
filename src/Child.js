@@ -9,6 +9,11 @@ export default function () {
   const  Add=()=>{
     setCount(count +1 )
 
+
+  }
+  const  Sub=()=>{
+    setCount(count - 1 )
+
   }
 
   return <Context.Consumer>
@@ -16,6 +21,8 @@ export default function () {
     {(value) =>
     <div>
     <button onClick={()=>Add()}>click</button>
+    <button onClick={()=>Sub()}>click</button>
+
      <h1>{value}
      </h1>
      </div>}

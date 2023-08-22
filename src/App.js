@@ -1,14 +1,20 @@
 import { createContext } from "react";
 import Child from "./Child"
-const Context = createContext("Default Value");
+import useBearStore from "./Store";
+
 
 
 const App=()=> {
-  const value = 'My Context Value';
+  function BearCounter() {
+    const bears = useBearStore((state) => state.bears)
+    return <h1>{bears} around here ...</h1>
+  }
+
+
   return (
-    <Context.Provider value={value}>
-      <Child/>
-    </Context.Provider>
+    <div>
+    <BearCounter/>
+    </div>
   );
 }
 export default App
