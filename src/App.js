@@ -5,9 +5,10 @@ import useBearStore from "./Store";
 
 
 const App=()=> {
-  useEffect(()=>{
-    localStorage.setItem("val","value")
-  })
+
+  
+  const st = useBearStore()
+  
   function BearCounter() {
     const bears = useBearStore((state) => state.bears)
     return <h1>{bears} around here ...</h1>
@@ -15,7 +16,10 @@ const App=()=> {
 
 
   return (
-    <div>
+    <div onClick={()=>{
+      st.setVal("gg")
+    }}>
+      {st.bears}
     <BearCounter/>
     </div>
   );
